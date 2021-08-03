@@ -325,23 +325,24 @@ function insert_value() {
     	window.alert("โปรดกรอก ชื่อ นามสกุล ของท่าน");
 	}else{
 		var url = script_url+"?company="+company+"&position="+position+"&name="+name+"&action=insert&callback=ctrlq";
-	    document.getElementById("lds-spinner").style.visibility = "visible";
+	   // document.getElementById("lds-spinner").style.visibility = "visible";
 		var request = jQuery.ajax({
 		   crossDomain: true,
 		   url: url ,
 		   method: "GET",
 		   dataType: "jsonp"
 		});
-		 ctrlq();
+		// ctrlq();
 	}
   }
 
 // print the returned data
-function ctrlq() {
+function ctrlq(e) {
  	//$("#re").html(e.result);
 	//$("#re").css("visibility","visible");
 	//document.getElementById("lds-spinner").style.display="none";
 	//document.getElementById("form_submit").style.display="none";
+	document.getElementById("lds-spinner").style.visibility = "visible";
 	window.top.location.href = "https://semicon.github.io/queenk9/report.html";
 	return false;
   }
