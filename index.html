@@ -323,7 +323,7 @@ function insert_value() {
 	if(name==""){
     	window.alert("โปรดกรอก ชื่อ นามสกุล ของท่าน");
 	}else{
-		var url = script_url+"?callback=ctrlq&company="+company+"&position="+position+"&name="+name+"&action=insert";
+		var url = script_url+"?company="+company+"&position="+position+"&name="+name+"&action=insert";
 	    document.getElementById("lds-spinner").style.visibility = "visible";
 		var request = jQuery.ajax({
 		crossDomain: true,
@@ -331,10 +331,19 @@ function insert_value() {
 		method: "GET",
 		dataType: "jsonp"
 		});
+		
+		setTimeout(doSomething, 1000);
+		function doSomething() {
+   //do whatever you want here
+        window.location.replace("report.html");
+	    return false;
+        }	
 	}
 
   }
+  
 
+/*
 // print the returned data
 function ctrlq() {
  	//$("#re").html(e.result);
@@ -345,7 +354,7 @@ function ctrlq() {
 	//window.top.location.href = "https://semicon.github.io/queenk9/report.html";
 	window.location.replace("report.html");
 	return false;
-  }
+  }*/
 	</script>
 <div align="center" class="h4">
 <p>โรงเรียนศรีพฤฒา แขวงทับช้าง เขตสะพานสูง กรุงเทพมหานคร 10250</p>
@@ -364,5 +373,7 @@ function ctrlq() {
 	</div>
 </div>
 </div>
+<div></div>
+<div></div>
 </body>
 </html>
