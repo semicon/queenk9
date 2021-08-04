@@ -328,11 +328,11 @@ function insert_value() {
 		var request = jQuery.ajax({
 		crossDomain: true,
 		url: url ,
-		method: "GET",
+		method: "POST",
 		dataType: "jsonp"
 		});
 		
-		setTimeout(doSomething, 1000);
+		setTimeout(doSomething, 2000);
 		function doSomething() {
    //do whatever you want here
         window.location.replace("report.html");
